@@ -1,0 +1,19 @@
+<html>
+  <head></head>
+  <body>
+<table border="">
+  <tr>
+    <th (click)="sortrow('mobileid')">MOBILE_ID</th>
+    <th (click)="sortrow('mobName')">MOBILE_NAME</th>
+    <th (click)="sortrow('mobPrice')">MOBILE_PRICE</th>
+    <th>ACTION</th>
+  </tr>
+  <tr *ngFor="let m of mobiles | orderBy:column:order">
+   <td>{{m.mobileid}}</td>
+   <td>{{m.mobName}}</td>
+   <td>{{m.mobPrice | currency:'USD'}}</td>
+   <td><input type="button" value="Delete" (click)="deleterow(m)"></td>
+  </tr>
+</table>
+  </body>
+</html>
